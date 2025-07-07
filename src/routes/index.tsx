@@ -9,7 +9,7 @@ export const PageRoutes = () => {
     <>
       <div className="flex justify-between items-center p-4 bg-gray-600 mb-5">
         <div>
-          <NavLink to={"/"} className="font-bold text-[20px] text-white">
+          <NavLink to={"/"} className="font-bold text-[25px] text-white">
             Stacks
           </NavLink>
         </div>

@@ -43,13 +43,16 @@ export const stacksApi = createApi({
       invalidatesTags: ["stacks"],
     }),
     updateStack: builder.mutation({
-      query: (data) => ({
-        method: "patch",
-        url: `/stacks/${data.id}`,
-        headers: { Authorization: `Bearer ${token}` },
-        body: data.body,
+      query: ({ id, body }) => ({
+        url: `/stacks/${id}`,
+        method: "PATCH",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body,
       }),
-      invalidatesTags: ["stacks"],
+      invalidatesTags: ["stacks"], 
     }),
   }),
 });
